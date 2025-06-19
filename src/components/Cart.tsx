@@ -1,7 +1,7 @@
 import Order from './Order'
 import carbon_delivery from '../assets/icon-carbon-neutral.svg'
 import { useCartStore, type CartItem } from '../lib/store/store';
-import cake from '../assets/cake.jpg';
+import cake from '/cake.jpg';
 
 function Cart() {
   const hanleOrder= ()=>{
