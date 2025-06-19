@@ -1,20 +1,26 @@
-import Card from "./components/card";
+import Card from "./components/Card";
 import Cart from "./components/Cart";
+import { cardData } from "./lib/data";
+import type { Tdata } from "./types/data";
 
 function App() {
   return (
     <>
-      <div className="bg-amber-100 w-full h-screen mx-auto py-10 px-8">
-        <div className="grid grid-cols-5 gap-6">
-          <div className="grid col-span-3 grid-cols-3 gap-6">
-            {/* <h2 className="text-3xl text-slate-600 font-semibold my-4">Desserts</h2> */}
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-          </div>
-          <div className="col-span-2">
-            <Cart />
+      <div className="bg-orange-50">
+        <div className=" w-full container mx-auto py-10 px-6 xl:px-0">
+          <h2 className="text-3xl text-slate-950 pb-8">Desserts</h2>
+          <div className="md:grid md:grid-cols-5 space-y-14 md:space-y-0 md:gap-6 ">
+            <div className="grid col-span-3 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* <h2 className="text-3xl text-slate-600 font-semibold my-4">Desserts</h2> */}
+              {
+                cardData.map((data: Tdata) =>(
+                  <Card key={data.id} {...data} />
+                ))
+              }
+            </div>
+            <div className="col-span-2">
+              <Cart />
+            </div>
           </div>
         </div>
       </div>
