@@ -9,6 +9,12 @@ export interface CartItem {
   quantity: number;
 }
 
+interface ModalState {
+  isOpen: boolean;
+  openModal: () => void;
+  closeModal: () => void;
+}
+
 interface CartState {
   items: CartItem[];
   addItem: (item: Omit<CartItem, "quantity">) => void;
@@ -70,4 +76,18 @@ export const useCartStore = create<CartState>()(
       name: "cart-storage", // localStorage key
     }
   )
+);
+
+
+export const useModalStore = create<ModalState>()(
+  persist(
+  (set) => ({
+  isOpen: false,
+  openModal: () => set({ isOpen: true }),
+  closeModal: () => set({ isOpen: false }),
+}),
+  {
+  name: "modal-storage",
+   }
+ )
 );
