@@ -13,7 +13,7 @@ function AddToCard({ product }: { product: { id: number; title: string; price: n
       <span className="text-sm text-amber-700">Add to Card</span>
     </button>
   ) : (
-    <div className="flex justify-between items-center absolute bottom-22 left-11 bg-amber-700 px-4 py-1 rounded-3xl w-32 mx-auto text-white transition duration-75">
+    <div className="flex justify-between items-center absolute bottom-22 left-16 md:left-6 xl:left-8 bg-amber-700 px-6 py-2 rounded-3xl w-36 mx-auto text-white transition duration-75">
       <button onClick={()=>decrease(product.id)} className="flex justify-center items-center border-1 border-white hover:bg-white hover:text-amber-800 active:scale-95 rounded-full w-4 h-4 pb-1 cursor-pointer transition duration-75">
         -
       </button>
